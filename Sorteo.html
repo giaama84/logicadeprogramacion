@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+<h1>PROGRAMA LOTERÍA</h1>
+<hr>
+<br>
+<script>
+
+	function saltarLinea() {
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<hr>");
+		document.write("<br>");
+	}
+
+	function imprimir(frase) {
+		document.write(frase)
+		saltarLinea()
+	}
+
+	function sorteo(n){
+		numeroPensado = Math.round(Math.random()*n)
+		return numeroPensado
+	}
+8
+	var numeroPensado = parseInt(sorteo(100));
+	var numeroLanzado = parseInt(prompt("Ingrese un número entre 0 y 100"))
+	var diferencia = numeroPensado-numeroLanzado
+	var diferenciaAbs = Math.abs(numeroPensado-numeroLanzado)
+
+	if (numeroPensado == numeroLanzado) {
+		imprimir("Usted ha acertado ¡Felicidades!");
+	}
+
+	else {
+		if (numeroLanzado > numeroPensado) {
+            imprimir("Lo sentimos, usted erró...el número pensado era menor que tu número  :( ");
+            imprimir("El número premiado es " + numeroPensado + ", el número que ingresó fue "+ numeroLanzado)
+            imprimir("La diferencia entre su número y el número premiado fue de " + diferenciaAbs + " ¡vuelva a intentarlo!");
+        } 
+        else{
+          	imprimir("Lo sentimos, usted erró... el número pensado era mayor que tu número  :(");
+          	imprimir("El número premiado es " + numeroPensado + ", el número que ingresó fue "+ numeroLanzado)
+          	imprimir("La diferencia entre su número y el número premiado fue de " + diferenciaAbs + " ¡vuelva a intentarlo!");
+        }
+    }
+	
+	
+
+</script>
